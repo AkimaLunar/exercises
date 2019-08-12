@@ -1,0 +1,25 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  //   "plugins": ["prettier"],
+  "extends": "eslint:recommended",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "describe": "readonly",
+    "it": "readonly",
+    "expect": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    // "prettier/prettier": "error",
+    "semi": ["error", "always"],
+    "quotes": ["error", "backtick"],
+    "indent": ["error", 4]
+  }
+}

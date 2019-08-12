@@ -32,7 +32,7 @@ const getMaxRecursive = (array) => {
   if (array.length === 1) { return array[0] }
 
   // (2) Take two first numbers in an array and throw out the smallest.
-  [first, second, ...rest] = array
+  const [first, second, ...rest] = array
   const max = first > second
     ? first // ¯\_(ツ)_/¯
     : second
