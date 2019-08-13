@@ -1,28 +1,28 @@
+
 /**
- * Filter
- * @param array arr
- * @param function fn
- * @returns Array
+ * Filter. Iterative Approach.
+ * @param {Array} arr
+ * @param {Function} fn
+ * @returns {Array}
  */
-
 function filter(arr, fn) {
-  const [current, ...rest] = arr
-  const filtered = []
-  // (1) Base case: if there are no items left in the array
-  // break and return filtered.
-  if (arr.length === 0) {
-    return filtered
-  }
-  // (2) Check, does the first element in the array pass the filter
-  // function
-  // (2.1) If yes, add to filtered
-  if (fn(current)) { filtered.push(current) }
-
-  // (3) Call filtered with the next item
-  filter(rest, fn)
+  const result = [];
+  arr.forEach((el) => {
+    if (fn(el)) { result.push(el) };
+  });
+  return result;
 }
 
-const even = (element) => element % 2 === 0
-const array = [1, 2, 3, 4, 5, 6]
+// 5gt
+/** Filter. Recursive approach.
+ * @param {Array} arr
+ * @param {Function} fn
+ * @returns {Array}
+ */
+const recursiveFilter = ([first, ...rest], fn) => first === undefined
+  ? []
+  : fn(first)
+    ? [first, ...recursiveFilter(rest, fn)]
+    : [...recursiveFilter(rest, fn)];
 
-console.log(filter(array, even))
+module.exports = { filter, recursiveFilter }
