@@ -1,10 +1,15 @@
 
 const data = require('../../allCountries');
 
+const _countries = data.reduce((acc, country) => {
+  return acc[country.countryCode] = {
+    code: country.countryCode,
+    name: country.countryName
+  }
+}, {})
+
 module.exports.seed = function(knex) {
-  const countries = data.map(({countryName, countryCode}) => ({
-    name: countryName, code:countryCode
-  }))
+  const countries = Object.values(_countries)
   return knex('countries')
     .del()
     .then(() => {
