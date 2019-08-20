@@ -6,15 +6,15 @@ function Vector(x, y, z) {
     this.z = z;
 }
 
-Vector.prototype.plus = function(vector) {
+Vector.prototype.plus = function (vector) {
     return new Vector(this.x + vector.x, this.y + vector.y, this.z + vector.z);
 };
 
-Vector.prototype.minus = function(vector) {
+Vector.prototype.minus = function (vector) {
     return new Vector(this.x - vector.x, this.y - vector.y, this.z - vector.z);
 };
 
-Vector.prototype.magnitude = function() {
+Vector.prototype.magnitude = function () {
     return (this.x ** 2 + this.y ** 2 + this.z ** 2) ** (1 / 2);
 };
 
