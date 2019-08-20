@@ -1,5 +1,4 @@
 const knex = require('./client');
-const allCountries = require('./allCountries')
 
 const query1 = knex
   .select('*')
@@ -10,12 +9,10 @@ const query1 = knex
 const query2 = knex('countries')
     .count('* as count')
     .where('name', 'ilike', '%central%');
-    select count(*) as "count" from "countries" where "name" ilike '%central%'
-// query2.then(count => console.log(count));
+query2.then(count => console.table(count));
 
 const query3 = knex
     .select('*')
     .from('countries')
     .whereRaw(`"name" ilike "code" || '%'`);
-    select * from "countries" where "name" ilike "code" || '%'
-// query3.then(countries => console.log(countries));
+query3.then(countries => console.table(countries));
