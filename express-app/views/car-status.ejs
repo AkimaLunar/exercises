@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>My Express App</title>
+    </head>
+    <body>
+        <h1>Car status</h1>
+        <form>
+            <label for="year">Year</label>
+            <select id="year" name="year">
+                <option value="">--Please choose an option--</option>
+                <% for (let i = 2025; i >= 1950; i--) {%>
+                    <option value="<%=i%>"><%=i%></option>
+                <% } %>
+            </select>
+            <input type="submit" value="Check!">
+        </form>
+        <% if (label) { %>
+            <h2>You car is <%=label%>!</h2>
+        <% } %>
+    </body>
+</html>

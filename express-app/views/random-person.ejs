@@ -1,0 +1,17 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Random Person</title>
+    </head>
+    <body>
+        <h1>Random Person</h1>
+        <form>
+            <label for="names">Enter names</label>
+            <input id="names" type="text" name="names" value="">
+            <input type="submit" value="Get random name!">
+        </form>
+        <% if (name) { %>
+            <p>Random name<%=name%></p>
+        <% } %>
+    </body>
+</html>

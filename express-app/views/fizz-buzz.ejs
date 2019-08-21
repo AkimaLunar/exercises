@@ -1,0 +1,14 @@
+
+<%- include('./partials/header', { title: 'FizzBuzz' }); -%>
+    <h1>Fizz Buzz</h1>
+    <form>
+        <label for="numberOne">Number One</label>
+        <input type="number" name="numberOne" value="">
+        <label for="numberTwo">Number Two</label>
+        <input type="number" name="numberTwo" value="">
+        <input type="submit" value="Check!">
+    </form>
+    <% if (fizzBuzz) { %>
+        <p><%= fizzBuzz %></p>
+    <% } %>
+<%- include('./partials/footer'); -%>
